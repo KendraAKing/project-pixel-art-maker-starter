@@ -10,20 +10,20 @@ chooseSize.addEventListener("submit", function(event)
     makeGrid();    
 });
 // When size is submitted by the user, call makeGrid()
-var chooseHeight = document.getElementById('inputHeight');
-var chooseWidth = document.getElementById('inputWidth');
+var chooserows = document.getElementById('inputHeight');
+var choosecolumns = document.getElementById('inputWidth');
 var artCanvas = document.getElementById('pixelCanvas');
 function makeGrid() 
 {
 // Your code goes here!
-    for (x = 0; x <= chooseHeight.value; x++)
+    for (r = 0; r <= chooserows.value; r++)
     {
-        var row = artCanvas.insertRow(x);
-        for (y=0; y<= chooseWidth.value; y++)
+        var row = artCanvas.insertRow(r);
+        for (c=0; c <= choosecolumns.value; c++)
         {   
-            var column = row.insertCell(y);
-            column.addEventListener("click", function(event)
-            {
+            var column = row.insertCell(c);
+            column.addEventListener("click", function(event) {
+                event.preventDefault();
                 column.style.backgroundColor = chooseColor.value; 
             });
         }
@@ -31,14 +31,14 @@ function makeGrid()
 }
 function clearGrid()
 {
-    for (x = 0; x <= chooseHeight.value; x++)
+    for (r = 0; r <= chooserows.value; r++)
     {
-        var row = artCanvas.insertRow(x);
-        for (y=0; y<= chooseWidth.value; y++)
+        var row = artCanvas.insertRow(r);
+        for (c=0; c <= choosecolumns.value; c++)
         {
-            var column = row.insertCell(y);
-            column.addEventListener("click",function(event)
-            {
+            var column = row.insertCell(c);
+            column.addEventListener("click",function(event) {
+                event.preventDefault();
                 column.style.backgroundColor = 'white';
             });
         }
