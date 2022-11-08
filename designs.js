@@ -7,17 +7,20 @@ var chooseSize = document.getElementById('sizePicker');
 var chooserows = document.getElementById('inputHeight');
 var choosecolumns = document.getElementById('inputWidth');
 var pxCanvas = document.getElementById('pixelCanvas');
-chooseSize.addEventListener("submit", function(event) {
+chooseSize.addEventListener('submit', function(event) {
     pxCanvas.innerHTML = "";
     event.preventDefault();
     makeGrid();    
 });
+pxCanvas.addEventListener('click', function(event) {
+    event.target.style.backgroundColor = colorPicker.value
+});
 function makeGrid()
 {
 // Your code goes here!
-    for (r = 0; r <= chooserows.value; r++) {
+    for (r = 0; r < chooserows.value; r++) {
         var row = pxCanvas.insertRow(r);
-        for (c = 0; c <= choosecolumns.value; c++) {
+        for (c = 0; c < choosecolumns.value; c++) {
             var column = row.insertCell(c);
             };
         }
