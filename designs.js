@@ -3,7 +3,6 @@ var chooseColor = document.getElementById('colorPicker');
 // Select size input using name from html code
 var chooseSize = document.getElementById('sizePicker');
 // When size is submitted by the user, call makeGrid()
-
 var chooserows = document.getElementById('inputHeight');
 var choosecolumns = document.getElementById('inputWidth');
 var pxCanvas = document.getElementById('pixelCanvas');
