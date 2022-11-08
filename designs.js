@@ -9,7 +9,7 @@ var pxCanvas = document.getElementById('pixelCanvas');
 chooseSize.addEventListener('submit', function(event) {
     pxCanvas.innerHTML = "";
     event.preventDefault();
-    makeGrid();    
+    makeGrid();
 });
 pxCanvas.addEventListener('click', function(event) {
     event.target.style.backgroundColor = colorPicker.value
@@ -23,4 +23,4 @@ function makeGrid()
             var column = row.insertCell(c);
             };
         }
-    }   
+    }
